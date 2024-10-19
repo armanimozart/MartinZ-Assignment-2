@@ -22,7 +22,7 @@ public class Main {
 				if (guess == luckyNumber) {
 					System.out.println("You win!");
 					break;
-				} else if (x==0) {
+				} else if (x == 0) {
 					System.out.println("You lose. The number to guess was: " + luckyNumber);
 					break;
 				}else if (guess < 1 || guess > 100) {
