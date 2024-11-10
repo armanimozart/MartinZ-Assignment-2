@@ -7,6 +7,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// Instantiate all variables
+		boolean hasRightGuess = false;
 		int guesses = 1; 
 		int maxNumberOfGuesses = 5;
 		int userGuess;
@@ -23,10 +24,11 @@ public class Main {
 			if (userGuess < 1 || userGuess > 100) {
 				System.out.println("Your guess is not between 1 and 100, please try again");
 			} else if (userGuess == luckyNumber) {
+				hasRightGuess = true;
 				System.out.println("You win!");
-				break;						
-			} else if (guesses == 5)	{
-				System.out.println("You lose. The number to guess was: " + luckyNumber);
+				break;	
+			} else if (guesses == 5) {
+				break;
 			} else if (userGuess < luckyNumber) {
 				System.out.println("Pick a higher number");
 				guesses++;
@@ -34,6 +36,9 @@ public class Main {
 				System.out.println("Pick a lower number");
 				guesses++;
 			}
+		}
+		if (guesses == 5 && hasRightGuess == false) {
+			System.out.println("You lose. The number to guess was: " + luckyNumber);
 		}
 		scanner.close();
 	}
